@@ -1,0 +1,9 @@
+# Python
+venv
+__pycache__
+
+# Nodejs
+node_modules
+
+# Mac
+.DS_Store
