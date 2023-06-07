@@ -10,5 +10,5 @@ FROM alpine:3.15
 WORKDIR /go-app
 RUN apk --no-cache add ca-certificates
 COPY --from=GO_BUILD /go-app/server /go-app/server
-EXPOSE 8080
+EXPOSE 8888
 CMD ["./server"]

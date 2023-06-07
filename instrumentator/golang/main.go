@@ -56,7 +56,7 @@ func handleRequests() {
 	server.HandleFunc("/", homePage)
 	server.HandleFunc("/metrics", metricsPage)
 
-	port := ":8080"
+	port := ":8888"
 	fmt.Println("Server started on port", port)
     log.Fatal(http.ListenAndServe(port, server))
 }
