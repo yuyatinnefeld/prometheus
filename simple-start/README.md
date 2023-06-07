@@ -40,8 +40,8 @@ docker-compose down
 
 ## Add Alert Rule
 ```bash
-# go alert rule dir
-cd alert-rule
+# go alert rules dir
+cd alert-rules
 
 # create rules
 vi rules.yml
