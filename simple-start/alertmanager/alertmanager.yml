@@ -1,11 +1,22 @@
 global:
   smtp_smarthost: 'smtp.gmail.com:587'
-  smtp_from: <SENDER_EMAIL>@gmail.com
-  smtp_auth_username: <SENDER_EMAIL>@gmail.com
-  smtp_auth_password: '<SENDER_EMAIL_PASSWORD>'
+  smtp_from: 'example@gmail.com'
+  smtp_auth_username: 'promtheus-alertmanager'
+  smtp_auth_password: 'pawssword'
+
 route:
-  receiver: infra-team # default receiver
+  # fallback receiver
+  receiver: admin-team
+  routes:
+  - match_re:
+      team_type: (infra|monitoring)
+    receiver: monitoring-team
+
 receivers:
- - name: infra-team-email
+ - name: admin-team
    email_configs:
-    - to: <RECEIVER_EMAIL>@gmail.com
+    - to: receiver_email_yyy@gmail.com
+
+ - name: monitoring-team
+   email_configs:
+    - to: receiver_email_xxx@gmail.com

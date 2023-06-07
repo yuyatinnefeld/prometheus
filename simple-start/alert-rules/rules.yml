@@ -1,6 +1,13 @@
 groups:
- - name: example
+ - name: alert-rules
    rules:
-   - alert: InstanceDown
-     expr: up == 0
+   - alert: NodeExporterDown
+     expr: up{job="node"} == 0
      for: 30s
+     labels:
+       severity: critical
+   - alert: PrometheusDown
+     expr: up{job="prometheus"} == 0
+     for: 30s
+     labels:
+       severity: critical
