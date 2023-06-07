@@ -18,6 +18,26 @@ open http://localhost:9090/targets
 docker-compose down
 ```
 
+## Add Recording Rules
+```bash
+cd recording-rules
+
+# add recording-rules
+vi recording_rules.yml
+
+# add alertmanager server
+vi docker-compose.yml
+
+# start all servers
+docker-compose up -d
+
+# check alert status
+open http://localhost:9090/
+
+
+docker-compose down
+```
+
 ## Add Alert Rule
 ```bash
 # go alert rule dir
@@ -85,3 +105,4 @@ python app.py
 # open prometheus and check batch job
 open http://localhost:9091/
 ```
+
