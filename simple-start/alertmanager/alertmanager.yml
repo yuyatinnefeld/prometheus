@@ -34,13 +34,13 @@ receivers:
  - name: infra-team
    slack_configs:
     - channel: '#prometheus'
-      api_url: 'https://hooks.slack.com/services/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'
+      api_url: 'https://hooks.slack.com/services/xx/xx/xxx'
       title: 'Prometheus Alerting'
       text: 'ERROR Alerting for Infra Team'
 
  - name: monitoring-team
    slack_configs:
     - channel: '#prometheus'
-      api_url: 'https://hooks.slack.com/services/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'
+      api_url: 'https://hooks.slack.com/services/xx/xx/xxx'
       title: 'Prometheus Alerting'
       text: 'ERROR Alerting for Monitoring Team'
