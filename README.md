@@ -14,47 +14,32 @@ Prometheus collects and stores its log-metrics as time series data, i.e. metrics
 
 ### Concept 
 
-`PCA.md`
+- `exam/PCA.md`
 
-### Setup Prometheus with Docker-Compose
+### Getting started
 
-`/simple-start`
+1. `/simple-start/setup`
+2. `/simple-start/instrumentator`
+3. `/simple-start/recording-rules`
+4. `/simple-start/alert-rules`
+5. `/simple-start/alertmanager`
+6. `/simple-start/blackbox-exporter`
+7. `/simple-start/pushgateway`
 
 ### Setup Prometheus with Helm Chart
 
-`/install-with-helm.md`
+1. `/kubernetes/setup`
+2. `/kubernetes/exporter`
+3. `/kubernetes/instrumentator`
 
 ### Setup Grafana
 
-`/grafana`
-
-### Scrape Applications with Exporter
-
-`/exporter/mongodb`
-
-`/exporter/postgresql`
-
-
-### Scrape Applications with Instrumentator
-
-`/instrumentator/golang`
-
-`/instrumentator/fastapi`
-
-`/instrumentator/nodejs`
-
-### Use Alertmanager
-
-`/instrumentator/nodejs`
-
-### Use Pushgateway
-
-`/simple-start/pushgateway`
+- `/grafana`
 
 ### PromQL
 
-`/promql.md`
+- `/exam/promql.md`
 
 ### Prep PCA Exam
 
-`/PCA.md`
+- `/exma/PCA.md`
