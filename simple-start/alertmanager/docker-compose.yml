@@ -1,20 +1,29 @@
-version: '3'
+version: '1'
 services:
+  go-app:
+    container_name: my-app-go
+    image: yuyatinnefeld/go-prometheus-app:1.0.0
+    ports:
+      - "8888:8888"
+  python-app:
+    container_name: my-app-python
+    image: yuyatinnefeld/fastapi_prometheus:1.2.0
+    ports:
+      - "8080:8080"
   prometheus:
     image: prom/prometheus
     container_name: prometheus
+    command: --config.file=/etc/prometheus/prometheus.yml
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
       - ./rules.yml:/etc/prometheus/rules.yml
     ports:
       - 9090:9090
-
   exporter:
     image: prom/node-exporter
     container_name: exporter
     ports:
       - 9100:9100
-
   alertmanager:
     image: prom/alertmanager
     container_name: alertmanager

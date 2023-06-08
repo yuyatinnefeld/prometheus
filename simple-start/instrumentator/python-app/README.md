@@ -1,8 +1,5 @@
 ## FastAPI App
 
-## Source
-- https://github.com/jeremyjordan/ml-monitoring
-
 ## Test FastAPI Application
 ```bash
 cd demo-app
@@ -16,8 +13,6 @@ curl http://127.0.0.1:8000/metrics/
 
 ## Create and push Image into Docker Repo
 ```bash
-colima start
-
 export IMAGE_NAME=fastapi_prometheus:1.1.0
 export REPO=yuyatinnefeld
 
@@ -32,6 +27,19 @@ docker push $REPO/$IMAGE_NAME
 # test repo image
 docker run -p 8888:8080 --name fastapi-prom $REPO/$IMAGE_NAME
 curl http://127.0.0.1:8888/metrics/
+```
 
-colima delete
+## Run Python App via Docker-Compose
+```bash
+# run
+docker-compose up -d
+
+# verify app
+open http://localhost:8080/metrics
+
+# verify target
+open http://localhost:9090/targets?search=my-python-app
+
+# verify metrics
+open http://localhost:9090/graph?g0.expr=python_gc_collections_total
 ```

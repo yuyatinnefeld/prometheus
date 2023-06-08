@@ -5,18 +5,42 @@ global:
   smtp_auth_password: 'pawssword'
 
 route:
-  # fallback receiver
-  receiver: admin-team
+  receiver: admin-team # fallback receiver
+  group_wait: 40s
+  group_interval: 5m
+  repeat_interval: 30m
   routes:
   - match_re:
-      team_type: (infra|monitoring)
+      team_type: (go-app|python-app)
+    receiver: developer-team
+    group_by: [category, app_type]
+  - match_re:
+      team_type: (infra)
+    receiver: infra-team
+    group_by: [category, app_type]
+  - match_re:
+      team_type: (monitoring|infra)
     receiver: monitoring-team
 
 receivers:
  - name: admin-team
    email_configs:
-    - to: receiver_email_yyy@gmail.com
+    - to: admin_team@gmail.com
+
+ - name: developer-team
+   email_configs:
+    - to: devloper_team@gmail.com
+
+ - name: infra-team
+   slack_configs:
+    - channel: '#prometheus'
+      api_url: 'https://hooks.slack.com/services/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'
+      title: 'Prometheus Alerting'
+      text: 'ERROR Alerting for Infra Team'
 
  - name: monitoring-team
-   email_configs:
-    - to: receiver_email_xxx@gmail.com
+   slack_configs:
+    - channel: '#prometheus'
+      api_url: 'https://hooks.slack.com/services/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'
+      title: 'Prometheus Alerting'
+      text: 'ERROR Alerting for Monitoring Team'

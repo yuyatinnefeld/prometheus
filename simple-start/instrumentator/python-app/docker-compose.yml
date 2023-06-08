@@ -1,0 +1,23 @@
+version: '1'
+services:
+
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus
+    command: --config.file=/etc/prometheus/prometheus.yml
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
+
+  exporter: #Exporter VM
+    container_name: exporter
+    image: prom/node-exporter
+    ports:
+      - 9100:9100
+
+  python-app:
+    container_name: my-python-app
+    image: yuyatinnefeld/fastapi_prometheus:1.2.0
+    ports:
+      - 8080:8080

@@ -2,7 +2,7 @@ global:
   scrape_interval:     5s
   evaluation_interval: 30s
 scrape_configs:
-- job_name: my-application
+- job_name: my-python-app
   honor_labels: true
   static_configs:
-  - targets: ['fastapi-application:8080']
+  - targets: ['my-python-app:8080']

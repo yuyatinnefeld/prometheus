@@ -1,0 +1,33 @@
+version: '1'
+
+networks:
+  heimdall-network:
+    driver: bridge
+
+services:
+  python-app:
+    container_name: my-app-python
+    image: yuyatinnefeld/fastapi_prometheus:1.2.0
+    ports:
+      - 8080:8080
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
+  exporter:
+    image: prom/node-exporter
+    container_name: exporter
+    ports:
+      - 9100:9100 
+  blackbox_exporter:
+    container_name: blackbox
+    image: prom/blackbox-exporter
+    ports:
+      - 9115:9115
+    command:
+      - '--config.file=/etc/blackboxexporter/config.yml'
+    volumes:
+      - ./blackbox.yml:/etc/blackboxexporter/config.yml

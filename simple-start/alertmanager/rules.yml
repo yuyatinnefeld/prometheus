@@ -8,6 +8,7 @@ groups:
      labels:
        severity: critical
        team_type: monitoring
+       category: up
 
    - alert: NodeExporterDown
      expr: up{job="node"} == 0
@@ -15,30 +16,35 @@ groups:
      labels:
        severity: critical
        team_type: infra
+       category: up
      annotations:
        summary: 'Node Expoter is Down!'
        description: 'instance: {{ $labels.instance }} | job: {{ $labels.job }}'
        app_link: 'http://localhost:9100'
 
-   - record: job:node_memory_Mem_bytes:available
-     expr: (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes) * 100
+   - record: job:go_app_cpu_total:available
+     expr: rate(process_cpu_seconds_total{job="app-go"}[5m]) * 100
 
-   - alert: NodeMemoryUsageAbove40%
-     expr: 40 < (100 - job:node_memory_Mem_bytes:available) < 75
-     for: 2m
-     labels:
-       severity: warning
-       team_type: infra
-     annotations:
-       summary: 'Node memory usage is going high'
-       description: 'instance: {{ $labels.instance }} | job: {{ $labels.job }} | value: {{ $value }}% '
-  
-   - alert: NodeMemoryUsageAbove75%
-     expr: (100 - job:node_memory_Mem_bytes:available) > 75
+   - alert: App_Go_CUP_Avg
+     expr: (job:go_app_cpu_total:available) > 0.45
      for: 2m
      labels:
        severity: critical
-       team_type: infra
+       team_type: go-app
+       category: cpu
+       app_type: golang
      annotations:
-       summary: 'Node memory usage is going high'
+       summary: 'DEMO 1'
+       description: 'instance: {{ $labels.instance }} | job: {{ $labels.job }} | value: {{ $value }}% '
+
+   - alert: App_Python_Latency_Sec
+     expr: (my_request_latency_seconds_count) > 0
+     for: 2m
+     labels:
+       severity: warning
+       team_type: python-app
+       category: latency
+       app_type: fastapi
+     annotations:
+       summary: 'DEMO 2'
        description: 'instance: {{ $labels.instance }} | job: {{ $labels.job }} | value: {{ $value }}% '
