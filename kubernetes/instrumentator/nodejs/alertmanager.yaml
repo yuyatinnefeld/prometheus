@@ -14,4 +14,4 @@ spec:
   receivers:
     - name: "ms-teams-webhook"
       webhookConfigs:
-        - url: "https://wanamour.webhook.office.com/xxx"
+        - url: "https://xxxx.webhook.office.com/xxx"
