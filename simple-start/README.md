@@ -20,6 +20,11 @@ cd alerting-rules
 cd alertmanager
 ```
 
+## Add Blackbox Exporter
+```bash
+cd blackbox-exporter
+```
+
 ## Use PushGateway
 ```bash
 cd pushgateway
