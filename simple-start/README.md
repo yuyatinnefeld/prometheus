@@ -30,3 +30,7 @@ cd blackbox-exporter
 cd pushgateway
 ```
 
+## File Based Service Discovery
+```bash
+cd service-discovery
+```

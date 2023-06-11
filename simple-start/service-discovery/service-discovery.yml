@@ -1,0 +1,5 @@
+- targets:
+  - exporter:9100 # localhost:9100
+  labels:
+    team: "development"
+    region: "europe-west"
