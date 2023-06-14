@@ -12,11 +12,7 @@ Prometheus collects and stores its log-metrics as time series data, i.e. metrics
 - Demo Prometheus UI: https://demo.promlabs.com/
 - Demo Proemtheus Metrics: https://demo.promlabs.com/metrics
 
-### Concept 
-
-- `exam/PCA.md`
-
-### Getting started
+### Hands-On Training
 
 1. `/simple-start/setup`
 2. `/simple-start/instrumentator`
@@ -26,20 +22,24 @@ Prometheus collects and stores its log-metrics as time series data, i.e. metrics
 6. `/simple-start/blackbox-exporter`
 7. `/simple-start/pushgateway`
 
-### Setup Prometheus with Helm Chart
+#### Setup Prometheus with Helm Chart
 
 1. `/kubernetes/setup`
 2. `/kubernetes/exporter`
 3. `/kubernetes/instrumentator`
 
-### Setup Grafana
+#### Monitor AWS EC2
+
+- `/aws`
+
+#### Setup Grafana
 
 - `/grafana`
 
-### PromQL
+#### PromQL
 
 - `/exam/promql.md`
 
-### Prep PCA Exam
+## Prep PCA Exam
 
 - `/exma/PCA.md`
