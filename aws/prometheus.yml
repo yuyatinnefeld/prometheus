@@ -1,0 +1,21 @@
+global:
+  scrape_interval: 10s
+scrape_configs:
+ - job_name: prometheus
+   static_configs:
+    - targets:
+       - localhost:9090
+ - job_name: node
+   static_configs:
+    - targets:
+       - exporter:9100
+ - job_name: ec2
+   ec2_sd_configs:
+    - access_key: 'xxx'
+      secret_key: 'yyy'
+      region: eu-central-1 #frankfurt
+   relabel_configs:
+    - source_labels: [__meta_ec2_public_ip] #ec2 public ip = 35.157.111.164
+      regex: '(.*)' # port-forward with replace __address__ 
+      replacement: '${1}:9100' # 172.31.34.250:80 >> 35.157.111.164:9100
+      target_label: __address__
