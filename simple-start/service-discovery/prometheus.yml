@@ -6,6 +6,17 @@ scrape_configs:
     - targets:
        - localhost:9090
  - job_name: node
+   relabel_configs:
+     - source_labels: [service, team]
+       regex: (.*);(.*)
+       target_label: category
+       action: replace
+       replacement: $1-$2
+     - source_labels: [__address__]
+       regex: (.*):.*
+       target_label: ip
+       action: replace
+       replacement: $1
    file_sd_configs:
     - files:
        - service-discovery.yml
