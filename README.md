@@ -17,15 +17,15 @@ Prometheus collects and stores its log-metrics as time series data, i.e. metrics
 - Demo Proemtheus Metrics: https://demo.promlabs.com/metrics
 
 ### Getting Started
-1. `/simple-start/setup`
-2. `/simple-start/instrumentator`
-3. `/simple-start/recording-rules`
-4. `/simple-start/alert-rules`
-5. `/simple-start/alertmanager`
-6. `/simple-start/blackbox-exporter`
-7. `/simple-start/pushgateway`
-8. `/simple-start/service-discovery`
-9. `/simple-start/promql`
+1. `/getting-started/setup`
+2. `/getting-started/instrumentator`
+3. `/getting-started/recording-rules`
+4. `/getting-started/alert-rules`
+5. `/getting-started/alertmanager`
+6. `/getting-started/blackbox-exporter`
+7. `/getting-started/pushgateway`
+8. `/getting-started/service-discovery`
+9. `/getting-started/promql`
 
 #### Setup Prometheus with k8s
 1. `/kubernetes/setup`
