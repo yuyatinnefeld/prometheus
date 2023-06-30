@@ -32,12 +32,9 @@ Prometheus collects and stores its log-metrics as time series data, i.e. metrics
 2. `/kubernetes/exporter`
 3. `/kubernetes/instrumentator`
 
-#### AWS
-1. `/aws/deploy_prometheus_ec2_server`
-2. `/aws/scrape_ec2_instance`
-
 #### Setup Grafana
 - `/kubernetes/grafana`
 
-#### PromQL
-- `/exam/promql.md`
+#### AWS
+1. `/aws/deploy_prometheus_ec2_server`
+2. `/aws/scrape_ec2_instance`
