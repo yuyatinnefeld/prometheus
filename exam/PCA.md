@@ -111,19 +111,6 @@
 - Service Monitors allow you to avoid edditing prometheus configs directly and give you a DECLARATIVE k8s syntax to define targets
 
 
-## Exam Dumps
-- Which property sets the time after which Prometheus will scrape the new metrics from target?
-- Which approach Prometheus prefers to scrape metrics from a target?
-- Which block in the Prometheus configuration file controls what targets are to be scraped?
-- Suppose you have a Linux machine being monitored. Does Prometheus has to convert the format of metrics being returned.
-- From which endpoint Prometheus scrapes the target metrics by default?
-- Which vector contains a single sample value for each time series all sharing the same timestamps?
-- Which PromQL function predicts the value of time series t seconds from now, based on the range vector v?
-- Logical operators can be defined between xxx?
-- What function will you apply to calculate the average of a range vector
-- rate() function is primarily used with which type of metrics
-
-
 
 
 
