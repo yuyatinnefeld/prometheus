@@ -6,18 +6,22 @@ global:
 
 route:
   receiver: admin-team # fallback receiver
-  group_wait: 40s
+  group_by: [team_type]
+  group_wait: 15s
   group_interval: 5m
   repeat_interval: 30m
   routes:
   - match_re:
-      team_type: (go-app|python-app)
-    receiver: developer-team
+      team_type: (go-app|golang-app)
+    receiver: app-team
+    group_by: [category, app_type]
+  - match_re:
+      team_type: (python-app|flask.*|fastapi.*)
+    receiver: app-team
     group_by: [category, app_type]
   - match_re:
       team_type: (infra)
     receiver: infra-team
-    group_by: [category, app_type]
   - match_re:
       team_type: (monitoring|infra)
     receiver: monitoring-team
@@ -25,22 +29,22 @@ route:
 receivers:
  - name: admin-team
    email_configs:
-    - to: admin_team@gmail.com
+    - to: 'admin_team@gmail.com'
 
- - name: developer-team
+ - name: app-team
    email_configs:
-    - to: devloper_team@gmail.com
+    - to: 'devloper_team@gmail.com'
 
  - name: infra-team
    slack_configs:
     - channel: '#prometheus'
       api_url: 'https://hooks.slack.com/services/xx/xx/xxx'
-      title: 'Prometheus Alerting'
+      title: 'Prometheus Alerting - {{.GroupLabels.severity}}'
       text: 'ERROR Alerting for Infra Team'
 
  - name: monitoring-team
    slack_configs:
     - channel: '#prometheus'
       api_url: 'https://hooks.slack.com/services/xx/xx/xxx'
-      title: 'Prometheus Alerting'
+      title: 'Prometheus Alerting - {{.GroupLabels.severity}}'
       text: 'ERROR Alerting for Monitoring Team'

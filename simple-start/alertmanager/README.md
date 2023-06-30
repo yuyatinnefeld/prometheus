@@ -18,10 +18,14 @@ open http://localhost:8888
 open http://localhost:8080
 curl http://localhost:8080/summary
 
-# stop exporter to check alerting
-docker stop exporter
+# check prometheus app
+open http://localhost:9090
 
-# check alert status
+# stop exporter and python app
+docker stop exporter
+docker stop my-app-python
+
+# check alert status (prometheus)
 open http://localhost:9090/alerts
 
 # check alertmanager

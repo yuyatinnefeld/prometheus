@@ -1,5 +1,5 @@
 groups:
- - name: alert-rules
+ - name: my-alerts
    rules:
 
    - alert: PrometheusDown
@@ -7,16 +7,18 @@ groups:
      for: 30s 
      labels:
        severity: critical
-       team_type: monitoring
+       team_type: infra-team
        category: up
+       app_type: monitoring
 
    - alert: NodeExporterDown
      expr: up{job="node"} == 0
      for: 30s
      labels:
        severity: critical
-       team_type: infra
+       team_type: monitoring-team
        category: up
+       app_type: demo-node
      annotations:
        summary: 'Node Expoter is Down!'
        description: 'instance: {{ $labels.instance }} | job: {{ $labels.job }}'
@@ -25,26 +27,26 @@ groups:
    - record: job:go_app_cpu_total:available
      expr: rate(process_cpu_seconds_total{job="app-go"}[5m]) * 100
 
-   - alert: App_Go_CUP_Avg
-     expr: (job:go_app_cpu_total:available) > 0.45
+   - alert: GolangAppDown
+     expr: up{job="app-go"} == 0
      for: 2m
      labels:
        severity: critical
-       team_type: go-app
-       category: cpu
+       team_type: app-team
+       category: up
        app_type: golang
      annotations:
        summary: 'DEMO 1'
        description: 'instance: {{ $labels.instance }} | job: {{ $labels.job }} | value: {{ $value }}% '
 
-   - alert: App_Python_Latency_Sec
-     expr: (my_request_latency_seconds_count) > 0
-     for: 2m
+   - alert: PythonAppDown
+     expr: up{job="app-python"} == 0
+     for: 30s 
      labels:
-       severity: warning
-       team_type: python-app
-       category: latency
-       app_type: fastapi
+       severity: critical
+       team_type: app-team
+       category: up
+       app_type: python
      annotations:
        summary: 'DEMO 2'
        description: 'instance: {{ $labels.instance }} | job: {{ $labels.job }} | value: {{ $value }}% '
