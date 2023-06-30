@@ -10,7 +10,7 @@ Prometheus collects and stores its log-metrics as time series data, i.e. metrics
 - `/exma/PCA.md`
 - `/exma/exam-mock.md`
 
-## Hands-On Trainging
+## Hands-On Training
 
 ### Prometheus UI
 - Demo Prometheus UI: https://demo.promlabs.com/
