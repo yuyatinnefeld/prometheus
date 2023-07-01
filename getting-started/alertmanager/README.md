@@ -1,3 +1,11 @@
+# Alertmanager
+
+## Docs
+- https://sysdig.com/blog/prometheus-alertmanager/
+- https://developers.soundcloud.com/blog/alerting-on-slos
+- https://docs.search-guard.com/latest/elasticsearch-alerting-throttling
+
+## Setup
 ```bash
 # add alertmanager prometheus.yml
 vi prometheus.yml
@@ -34,3 +42,4 @@ open http://localhost:9093/#/alerts
 # check 
 docker-compose down
 ```
+
