@@ -5,7 +5,7 @@
 - Duration: 90 min
 - Questions
 - Question: 60
-- Pass: x > 75%
+- Pass: x > 75% (min 45/60)
 
 ## Exam Topics
 
@@ -16,6 +16,9 @@
 - What is typically tracked within a span of a trace?
 - What are the 3 core components of observability?
 - Which type of data is monitored by Prometheus?
+- What is an error budget?
+- In the context of monitoring and observability, what type of data is typically used to define a Service Level Indicator (SLI)?
+
 
 ### Prometheus Fundamentals (20%)
 - Which property configures the timing for Prometheus to scrape new metrics from a target?
@@ -32,12 +35,16 @@
 - What does the term "inhibiting" refer to in the context of Prometheus?
 - Which type of database does Prometheus utilize?
 - What component is responsible for collecting metrics from an instance and exposing them in a format that Prometheus expects?
-- Which component is is suitable for collecting metrics from batch jobs?
+- Which component is suitable for collecting metrics from batch jobs?
 - When is the configuration option 'honor_labels' used?
 - What is the purpose of port 9090/9093/9100/9091 in Prometheus?
 - what are 2 default metric labels?
+- Which of the file systems is recommended/supported by Prometheus?
+- How can you configure a Blackbox Exporter probe to check the successful response of your servers to ping?
 
-### PromQL (28%)
+
+
+### PromQL & Metrics (28%)
 - What is the name of the vector in Prometheus that stores a single sample value for each time series, all of which have synchronized timestamps?
 - Which PromQL function is used to estimate the value of a time series at a future time, t seconds from the current time, based on the range vector v?
 - Between what type of expressions can logical operators be defined?
@@ -48,6 +55,9 @@
 - What  is the definition of a metric?
 - What is the CLI utility tool for Prometheus called?
 - Which type of metric is suitable for measuring the internal temperature of a server?
+- What is the data type of Prometheus metric values?
+
+
 
 
 ### Instrumentation and Exporters (16%)
@@ -57,6 +67,7 @@
 - Which Prometheus exporter is recommended for monitoring network devices?
 - What is the purpose of a Prometheus metrics registry?
 - What is the purpose or definition of a Prometheus exporter?
+- In what scenarios would you use the Blackbox Exporter?
 
 
 ### Recording & Alerting & Dashboarding (18%)
