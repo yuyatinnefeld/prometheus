@@ -23,7 +23,7 @@ scrape_configs:
       module: [http_ipv4] #//specify the module to be used here
     static_configs:
       - targets:
-        - blackbox:9115    
+        - blackbox:9115    #you can select many urls e.g ["https://yuyatinnefeld.com/", "https://grafana.com/"]
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
