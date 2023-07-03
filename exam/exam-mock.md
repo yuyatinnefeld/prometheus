@@ -28,7 +28,7 @@
 - How is managed data retention in prometheus?
 - What are the essential components of Prometheus?
 - Which two query parameters are required when configuring a Blackbox Exporter probe?
-- What is a recognized method to initiate a configuration reload in Prometheus?
+- What is required to initiate a configuration reload in Prometheus?
 - What HTTP method does Prometheus employ for performing scrapes?
 - Which service discovery configuration is recommended for scraping EC2 instances?
 - What is the significance and purpose of the scrape_interval configuration in Prometheus?
@@ -65,6 +65,7 @@
 - What is the default endpoint that Prometheus uses to scrape the metrics from the target?
 - Where is the version of the Prometheus exporter typically defined?
 - Which Prometheus exporter is recommended for monitoring network devices?
+- Which networking protocol does Prometheus utilize for performing scrapes?
 - What is the purpose of a Prometheus metrics registry?
 - What is the purpose or definition of a Prometheus exporter?
 - In what scenarios would you use the Blackbox Exporter?
@@ -88,9 +89,9 @@
 - How can you coordinate the simultaneous sending of multiple alerts with similar label sets in Prometheus?
 - How can Alertmanager temporarily suppress notifications for specific alerts?
 - Which feature of Alertmanager is resonsilbe for sending alert to the right receiver?
-
-
-
+- [TODO:CHECK] What is the purpose of the repeat_interval/conitnue/group_wait/group_inteval attribute in an Alertmanager route configuration?
+- Which 2 attribute(s) of an alerting rule can be used to include extra metadata?
+- What is an exemplar in Prometheus?
 
 
 
