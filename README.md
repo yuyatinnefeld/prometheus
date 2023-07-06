@@ -6,9 +6,9 @@
 ## About
 Prometheus collects and stores its log-metrics as time series data, i.e. metrics information is stored with the timestamp at which it was recorded, alongside optional key-value pairs called labels.
 
-## Prep PCA Exam
-- `/exma/PCA.md`
-- `/exma/exam-mock.md`
+## Prep PCA Exam Mock
+- `/PCA/exam-mock.md`
+- `/PCA/exam-mock-answer.md`
 
 ## Hands-On Training
 
