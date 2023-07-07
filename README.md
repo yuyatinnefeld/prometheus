@@ -38,3 +38,11 @@ Prometheus collects and stores its log-metrics as time series data, i.e. metrics
 #### AWS
 1. `/aws/deploy_prometheus_ec2_server`
 2. `/aws/scrape_ec2_instance`
+
+#### Learn Sources
+- https://blog.cloudflare.com/how-cloudflare-runs-prometheus-at-scale/
+- https://blog.cloudflare.com/monitoring-our-monitoring/
+- https://www.robustperception.io/blog/
+- https://satyanash.net/software/2021/01/04/understanding-prometheus-range-vectors.html
+- https://sre.google/sre-book/monitoring-distributed-systems/
+- https://www.robustperception.io/whats-the-difference-between-group_interval-group_wait-and-repeat_interval/
