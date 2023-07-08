@@ -2,36 +2,6 @@
 
 - promhttp_metric_handler_requests_total = Counter Metric
 
-# Vector (total requests of status 200 from prom handler)
-
-```bash
-PROM_QUERY='promhttp_metric_handler_requests_total{instance="node-exporter:9100",code="200"}'
-
-curl 'https://demo.promlabs.com/api/v1/query' \
---data query=$PROM_QUERY | jq
-
-{
-  "status": "success",
-  "data": {
-    "resultType": "vector",
-    "result": [
-      {
-        "metric": {
-          "__name__": "promhttp_metric_handler_requests_total",
-          "code": "200",
-          "instance": "node-exporter:9100",
-          "job": "node"
-        },
-        "value": [
-          1688799375.177,
-          "952594"
-        ]
-      }
-    ]
-  }
-}
-```
-
 # Range Vector
 
 ```bash

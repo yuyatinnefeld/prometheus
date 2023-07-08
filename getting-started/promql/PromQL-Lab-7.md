@@ -15,12 +15,6 @@
   quantile (calculate φ-quantile (0 ≤ φ ≤ 1) over dimensions)
   ```
 
-  # examples
-  COUNT(prometheus_http_requests_total{code=~"2.*|4.*"}) BY (code)
-  MAX(prometheus_http_requests_total{code=~"4.*"}) BY (handler)
-  AVG(prometheus_http_requests_total) BY (code)
-  # 
-  ```
 - logical/set operator
   ```bash
   # intersection
