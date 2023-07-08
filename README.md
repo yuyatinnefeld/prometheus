@@ -48,3 +48,4 @@ Prometheus collects and stores its log-metrics as time series data, i.e. metrics
 - https://www.robustperception.io/whats-the-difference-between-group_interval-group_wait-and-repeat_interval/
 - https://www.atatus.com/blog/promql-introduction/
 - https://promlabs.com/promql-cheat-sheet/
+- https://jaanhio.me/blog/understanding-alertmanager/
