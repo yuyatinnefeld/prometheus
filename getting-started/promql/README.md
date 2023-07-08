@@ -15,56 +15,28 @@
 - Scalar
 - String
 
-### Instant vector
-- a set of time series containing a SINGLE SAMPLE
+## Hands-On Labs
 
-Exp: `<<metric name>>{<<label>>=”<<value>>”}` like `promhttp_metric_handler_requests_total{code="200",job="node"}`
-```bash
-# use demo prometheus ui site
-curl https://demo.promlabs.com/metrics
+### Instant vector and Range Vector
+`./promql/PromQL-Lab-1.md`
 
-# Instant Vector:
-curl 'https://demo.promlabs.com/api/v1/query' \
-    --data 'query=promhttp_metric_handler_requests_total{code="200",job="node"}' | jq
-```
+### average
+`./promql/PromQL-Lab-2.md`
 
-### Range vector
-- a set of time series containing a RANGE OF DATA POINTS
-Exp: `<<metric name>>{<<label>>=”<<value>>”}[duration]` like `promhttp_metric_handler_requests_total{code="200",job="node"}[30s]`
+### avg() vs avg_over_time()
+`./promql/PromQL-Lab-3.md`
 
-```bash
-# Range Vector:
-curl 'https://demo.promlabs.com/api/v1/query' \
-    --data 'query=promhttp_metric_handler_requests_total{code="200",job="node"}[30s]' | jq
-```
+### Rate()
+`./promql/PromQL-Lab-4.md`
 
-### Scalar
-- a simple numeric floating point value
+### Histogram
+`./promql/PromQL-Lab-5.md`
 
-### String
-- a simple string value; currently unused
+### Summary
+`./promql/PromQL-Lab-6.md`
 
 
-## PromQL Operators
-
-### Selectors & Matchers
-```bash
-# equality matcher (=)
-curl 'https://demo.promlabs.com/api/v1/query' \
-    --data 'query=process_cpu_seconds_total{job="node"}' | jq
-
-#negative equality matcher (!=)
-curl 'https://demo.promlabs.com/api/v1/query' \
-    --data 'query=process_cpu_seconds_total{job!="node"}' | jq
-
-# regex matcher (=~)
-curl 'https://demo.promlabs.com/api/v1/query' \
-    --data 'query=process_cpu_seconds_total{job=~".*prom.*"}' | jq
-
-# negative regex matcher (!~)
-curl 'https://demo.promlabs.com/api/v1/query' \
-    --data 'query=process_cpu_seconds_total{job!~".*prom.*"}' | jq
-```
+## PromQL Operator
 
 ### Arithmetic Binary Operators
 
@@ -171,14 +143,4 @@ quantile_over_time(scalar, range-vector) #φ-quantile (0 ≤ φ ≤ 1) of an int
 stddev_over_time(range-vector) #standard deviation
 stdvar_over_time(range-vector) #standard variance
 ```
-
-### rate() vs irate()
-- rate() caculates the `PER-SECOND-AVERAGE RATE` of increase of the time series in the range vector
-- irate() cacluates the `INSTANT RATE` of increase of the time series in the range vector
-
-- rate() is generally used when graphing the slow moving counters. While irate() is used when graphing the high volatile counters.
-
-- irate uses only two last data points on each interval between subsequent pixels (aka step), while rate calculates average per-second rate over all the data points on each interval.
-
-
 
