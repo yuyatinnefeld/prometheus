@@ -1,10 +1,54 @@
 # Operators
-- aggregaration opearator (avg, sum, count, etc.)
-- logical operator (AND,OR,UNLESS)
-- binary opearator 
-  - arithmetic operators (+,-,%,*, etc.)
-  - comparison operators (==, <, >, >=, etc.)
+- aggregaration opearator
+  ```bash
+  sum (calculate sum over dimensions)
+  min (select minimum over dimensions)
+  max (select maximum over dimensions)
+  avg (calculate the average over dimensions)
+  group (all values in the resulting vector are 1)
+  stddev (calculate population standard deviation over dimensions)
+  stdvar (calculate population standard variance over dimensions)
+  count (count number of elements in the vector)
+  count_values (count number of elements with the same value)
+  bottomk (smallest k elements by sample value)
+  topk (largest k elements by sample value)
+  quantile (calculate φ-quantile (0 ≤ φ ≤ 1) over dimensions)
+  ```
 
+  # examples
+  COUNT(prometheus_http_requests_total{code=~"2.*|4.*"}) BY (code)
+  MAX(prometheus_http_requests_total{code=~"4.*"}) BY (handler)
+  AVG(prometheus_http_requests_total) BY (code)
+  # 
+  ```
+- logical/set operator
+  ```bash
+  # intersection
+  AND
+  # union
+  OR
+  # complement
+  UNLESS
+  ```
+- binary opearator 
+  - arithmetic operators
+    ```bash
+    + (add)
+    – (subtract)
+    * (multiply)
+    / (divide)
+    % (percentage)
+    ^ (exponents)
+    ```
+  - comparison operators
+    ```bash
+    == (equal to)
+    != (does not equal)
+    > (greater than)
+    < (less than)
+    >= (greater than or equal to)
+    <= (less than or equal to)
+    ```
 # Aggregation Operator
 
 ## Grouping sum() with by() and without()
