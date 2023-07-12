@@ -25,7 +25,7 @@
 - What is one advantage of the push model for recoring metrics compared to pull models?
 - How do Prometheus, ELK stack, and InfluxDB differ in terms of their functionalities and use cases?
 - What  is the definition of a metric?
-
+- What are the Prometheus exemplars?
 
 ### Prometheus Fundamentals (20%)
 - What is the CLI utility tool for Prometheus called?
@@ -36,7 +36,6 @@
 - Which action in the label configuration is used to delete a specific target?
 - How is managed data retention in prometheus?
 - What are the essential 3 components of Prometheus?
-- Which two query parameters are required when configuring a Blackbox Exporter probe?
 - What is required to initiate a configuration reload in Prometheus? 3 methods
 - What HTTP method does Prometheus employ for performing scrapes?
 - Which service discovery configuration is recommended for scraping EC2 instances?
@@ -52,6 +51,8 @@
 - How do you configure the targets that Prometheus should scrape?
 - What is the agent deployment mode of Prometheus?
 - Which CLI command is suitable for unit testing Prometheus rules?
+- Which CLI command is suitable for checking validity of the configuration file?
+
 
 ### PromQL (28%)
 - What is PromQL?
@@ -74,6 +75,8 @@
 
 
 ### Instrumentation and Exporters (16%)
+- `X-Prometheus-Scrape-Timeout-Seconds`
+- Which two query parameters are required when configuring a Blackbox Exporter probe?
 - What is the exposition format of Prometheus?
 - Does Prometheus need to perform any format conversion on the metrics returned by a monitored Linux machine?
 - What is the default endpoint that Prometheus uses to scrape the metrics from the target?
@@ -91,6 +94,7 @@
 
 
 ### Recording & Alerting & Dashboarding (18%)
+- Is there a way to deactivate a specific route in Alertmanager for a specific time frame?
 - What is considered a best practice when it comes to alerting in monitoring systems: focusing on alerting based on symptoms or alerting based on causes?
 - What is the meaning of "alert symptoms" and "alert causes" in the context of monitoring systems like Prometheus?
 - Which aspect, symptoms or causes, is more visible to customers in the context of an issue?

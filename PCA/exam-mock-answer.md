@@ -27,7 +27,7 @@
 - ELK stack is a push-based system, used for collecting, processing, storing, and visualizing log data.
 - Prometheus is a pull-based time-series database and monitoring system specifically designed for monitoring dynamic cloud-native environments.
 - numeric time-series data point 
-
+- An exemplar is a specific trace representative of measurement taken in a given time interval.
 
 ### Prometheus Fundamentals (20%)
 - promtool
@@ -37,7 +37,6 @@
 - scrape_configs -> relabel_configs -> action: drop
 - with the flag `--storage.tsdb.retention.time` and `--storage.tsdb.retention.size`
 - Retrieval, TSDB, HTTP Server
-- target + module
 - 1.Sending a SIGHUP signal to the Prometheus process, 2.Using the Prometheus API `/-/reload`, 3. Using a service manager (systemctl) or orchestration tool (k8s)
 - GET method
 - `ec2_sd_configs`
@@ -53,6 +52,7 @@
 - scrape_configs > static_configs -> targets:xxx
 - agent mode is a light promtheus mode, which is focused for remote-write (remote storage), service-discovery and scraping specially for edge-computing, iot.
 - `./promtool test rules test.yml`
+- `./promtool check rules test.yml`
 
 
 ### PromQL & Metrics (28%)
@@ -76,6 +76,8 @@
 
 
 ### Instrumentation and Exporters (16%)
+- What is the HTTP headers to establish by Prometheus during each scrape?
+- target + module
 - Promtheus is using text-based format for exposing metrics
 - No
 - /metrics
@@ -85,12 +87,13 @@
 - Registry serves as a central repository for collecting, storing, and managing metrics
 - Exporter is responsible for collecting metrics from a specific system, application, or service and exposing them for Prometheus
 - Network Service Monitoring, Helth Check, Externe Monitoring
-- scrape_configs > `metrics_path`
+- scrape_configs > `metrics_path` et
 - Blackbox Exporter allows blackbox probing of endpoints over HTTP, HTTPS, DNS, TCP, ICMP and gRPC
 - HELP, TYPE
 
 
 ### Recording & Alerting & Dashboarding (18%)
+- attribute in the route `time_intervals` ex. `time_intervals: [holidays, offhours]`. `mute_time_interval` is DEPRECATED.
 - As a best practice, alerting should be triggered on symptoms and NOT causes
 - The "what’s broken" indicates the symptom; the "why" indicates a (possibly intermediate) cause.
 - symptom is customer visible error
