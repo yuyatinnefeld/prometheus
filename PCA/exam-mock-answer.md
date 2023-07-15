@@ -73,10 +73,11 @@
 - `_bucket`, `_sum` and `_count`
 - metric name, label, timestamp, value
 - floor=round a number down, ceil=round a number up
+- absent(...)
 
 
 ### Instrumentation and Exporters (16%)
-- What is the HTTP headers to establish by Prometheus during each scrape?
+- `X-Prometheus-Scrape-Timeout-Seconds`
 - target + module
 - Promtheus is using text-based format for exposing metrics
 - No
