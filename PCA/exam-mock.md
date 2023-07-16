@@ -11,116 +11,113 @@
 ## Exam Topics
 
 ### Observability Concepts (18%)
-- What is the preferred approach used by Prometheus to collect metrics from a target?
-- How do Observability, Monitoring, and Telemetry differ in terms of their functionalities?
-- What is RED Method?
-- What are the distinctions between SLO, SLI, and SLA?
-- In the context of tracing, what is the meaning or representation of a span?
-- In which scenarios is distributed tracing less beneficial or not as applicable?
-- What is typically tracked within a span of a trace?
-- What are the 3 core components of observability?
-- Which type of data is monitored by Prometheus?
-- In the context of monitoring and observability, what type of data is typically used to define a Service Level Indicator (SLI)?
-- What is the meaning or purpose of an error budget policy?
-- What is one advantage of the push model for recoring metrics compared to pull models?
-- How do Prometheus, ELK stack, and InfluxDB differ in terms of their functionalities and use cases?
-- What  is the definition of a metric?
-- What are the Prometheus exemplars?
+1. What is the preferred approach used by Prometheus to collect metrics from a target?
+2. How do Observability, Monitoring, and Telemetry differ in terms of their functionalities?
+3. What is RED Method?
+4. What are the distinctions between SLO, SLI, and SLA?
+5. In the context of tracing, what is the meaning or representation of a span?
+6. In which scenarios is distributed tracing less beneficial or NOT as applicable?
+7. What are typically tracked within a span of a trace?
+8. What are the 3 core components of observability?
+9. Which type of data is monitored by Prometheus?
+10. In the context of monitoring and observability, what type of data is typically used to define a SLI?
+11. What is the meaning or purpose of an error budget policy?
+12. What is one advantage of the push model for recoring metrics compared to pull models?
+13. How do Prometheus, ELK stack, and InfluxDB differ in terms of their functionalities and use cases?
+14. What is the definition of a metric?
+15. What are the Prometheus exemplars?
 
 ### Prometheus Fundamentals (20%)
-- What is the CLI utility tool for Prometheus called?
-- What are the limitations of Prometheus?
-- What is Service Discovery and which categories are there?
-- Which property configures the timing for Prometheus to scrape new metrics from a target?
-- Which section in the Prometheus configuration file governs the selection of targets to be scraped?
-- Which action in the label configuration is used to delete a specific target?
-- How is managed data retention in prometheus?
-- What are the essential 3 components of Prometheus?
-- What is required to initiate a configuration reload in Prometheus? 3 methods
-- What HTTP method does Prometheus employ for performing scrapes?
-- Which service discovery configuration is recommended for scraping EC2 instances?
-- What is the significance and purpose of the `scrape_interval` configuration in Prometheus?
-- Which type of database does Prometheus utilize?
-- What component is responsible for collecting metrics from an instance and exposing them in a format that Prometheus expects?
-- Which component is suitable for collecting metrics from batch jobs?
-- When is the configuration option 'honor_labels' used?
-- What is the purpose of port 9090/9093/9100/9091 in Prometheus?
-- what are 2 default metric labels?
-- Which of the file systems is recommended/supported by Prometheus?
-- How can you configure a Blackbox Exporter probe to check the successful response of your servers to ping?
-- How do you configure the targets that Prometheus should scrape?
-- What is the agent deployment mode of Prometheus?
-- Which CLI command is suitable for unit testing Prometheus rules?
-- Which CLI command is suitable for checking validity of the configuration file?
+1. What is the CLI utility tool for Prometheus called?
+2. What are the limitations of Prometheus?
+3. What is Service Discovery and which categories are there?
+4. Which property configures the timing to scrape metrics from targets?
+5. Which section in the Prometheus configuration file governs the selection of targets to be scraped?
+6. Which action in the label configuration is used to delete a specific target?
+7. How is managed data retention in prometheus?
+8. What are the essential 3 components of Prometheus?
+9. What is required to be able to reload Prometheus?
+10. What are 3 methods to restart the Prometheus server?
+11. What HTTP method does Prometheus employ for performing scrapes?
+12. Which SD configuration is recommended for scraping EC2 instances?
+13. Which SD configuration is recommended for nodes of Elastic Kubernetes Service on AWS?
+14. What is the purpose of the `scrape_interval` configuration in Prometheus?
+15. Which type of database does Prometheus utilize?
+16. What component is responsible for collecting metrics from an instance and exposing them in a format that Prometheus expects?
+17. Which component is suitable for collecting metrics from batch jobs?
+18. When is the configuration option `honor_labels:true` used?
+19. What is the purpose of port `9090/9093/9100/9091` in Prometheus?
+20. what are 2 default metric labels?
+21. Which of the file systems is recommended/supported by Prometheus?
+22. How can you configure a Blackbox Exporter probe to check the successful response of your servers to PING?
+23. How do you configure the targets that Prometheus should scrape?
+24. What is the agent deployment mode of Prometheus?
+25. Which CLI command is suitable for unit testing Prometheus rules?
+26. Which CLI command is suitable for checking validity of the config files?
 
 
 ### PromQL (28%)
-- What is PromQL?
-- What is histogram metric in Prometheus?
-- Which data types are used in PromQL?
-- What is the name of the vector in Prometheus that stores a single sample value for each time series, all of which have synchronized timestamps?
-- Which PromQL function is used to estimate the value of a time series at a future time, t seconds from the current time, based on the range vector v?
-- Between what type of expressions can logical operators be defined?
-- Which function can be used to calculate the average of a range vector in Prometheus?
-- What is the diff between avg and avg_over_time()?
-- With which type of metrics is the "rate()" function primarily used in Prometheus?
-- What does the term "offset" refer to in Prometheus?
-- What distinguishes the rate and irate query functions in Prometheus?
-- What distinguishes the rate and deriv query functions in Prometheus?
-- Which type of metric is suitable for measuring the internal temperature of a server?
-- What is the data type of Prometheus metric values?
-- How many unique series are generated by a histogram metric type, and what is their format?
-- What are the 4 components of the Prometheus data model?
-- What is the difference between the ceil and floor functions?
-- Which query function among the following returns a result of 1 in case the specified time series does not exist?
-
-
-
-
+1. What is PromQL?
+2. What is histogram metric in Prometheus?
+3. Which data types are used in PromQL?
+4. What is the name of the vector in Prometheus that stores a single sample value?
+5. Which PromQL function is used to estimate the value of a time series at a future time, t seconds from the current time, based on the range vector v?
+6. Between what type of expressions can logical operators be defined?
+7. Which function can be used to calculate the average of a range vector in Prometheus?
+8. What is the diff between `avg(...)` and `avg_over_time(...)`?
+9. With which type of metrics is the `rate(...)` function primarily used in Prometheus?
+10. What does the term "offset" refer to in Prometheus?
+11. What distinguishes the `rate(...)` and `irate(...)` query functions in Prometheus?
+12. What distinguishes the `rate(...)` and `deriv(...)` query functions in Prometheus?
+13. Which type of metric is suitable for measuring the internal temperature of a server?
+14. What is the data type of Prometheus metric values?
+15. How many unique series are generated by a histogram metric type?
+16. What are the 4 components of the Prometheus metrics data model?
+17. What is the difference between the ceil and floor functions?
+18. Which query function among the following returns a result of 1 in case the specified time series does not exist?
 
 
 ### Instrumentation and Exporters (16%)
-- What is the HTTP headers to establish by Prometheus during each scrape?
-- Which two query parameters are required when configuring a Blackbox Exporter probe?
-- What is the exposition format of Prometheus?
-- Does Prometheus need to perform any format conversion on the metrics returned by a monitored Linux machine?
-- What is the default endpoint that Prometheus uses to scrape the metrics from the target?
-- Where is the version of the Prometheus exporter typically defined?
-- What is the most suitable exporter for monitoring an HTTP web server endpoint to verify that it returns a 200 status code?
-- Which Prometheus exporter is recommended for monitoring network devices?
-- Which networking protocol does Prometheus utilize for performing scrapes?
-- What is the purpose of a Prometheus metrics registry?
-- What is the purpose or definition of a Prometheus exporter?
-- In what scenarios would you use the Blackbox Exporter?
-- How does Prometheus identify the scrape path for its targets?
-- Which endpoints allows blackbox probing?
-- In a scenario where you have a dynamic etcd database containing scrape targets for Prometheus, how should you configure service discovery?
-- What are the 2 types of attributes that can be present in the /metrics endpoint?
+1. What is the HTTP headers to establish by Prometheus during each scrape?
+2. Which 2 query parameters are required when configuring a Blackbox Exporter probe?
+3. What is the exposition format of Prometheus?
+4. Does Prometheus need to perform any format conversion on the metrics returned by a monitored Linux machine?
+5. What is the default endpoint that Prometheus uses to scrape the metrics from the target?
+6. Where is the version of the Prometheus exporter typically defined?
+7. What is the most suitable exporter for monitoring an HTTP web server endpoint to verify that it returns a 200 status code?
+8. Which Prometheus exporter is recommended for monitoring network devices?
+9. Which networking protocol does Prometheus utilize for performing scrapes?
+10. What is the purpose of a Prometheus metrics registry?
+11. What is the purpose or definition of a Prometheus exporter?
+12. In what scenarios would you use the Blackbox Exporter?
+13. How does Prometheus identify the scrape path for its targets?
+14. Which endpoints allows blackbox probing?
+15. In a scenario where you have a dynamic etcd database containing scrape targets for Prometheus, how should you configure service discovery?
+16. What are the 2 types of attributes that can be present in the `/metrics` endpoint?
 
 
 ### Recording & Alerting & Dashboarding (18%)
-- Is there a way to deactivate a specific route in Alertmanager for a specific time frame?
-- What is considered a best practice when it comes to alerting in monitoring systems: focusing on alerting based on symptoms or alerting based on causes?
-- What is the meaning of "alert symptoms" and "alert causes" in the context of monitoring systems like Prometheus?
-- Which aspect, symptoms or causes, is more visible to customers in the context of an issue?
-- What is the good naming convention for the recoring rules?
-- What is Acknowledge-based throttling and Time-based throttling?
-- What are the 3 possible statuses of a Prometheus alert?
-- How can I use a PromQL query to retrieve the currently active alerts in Alertmanager?
-- What is the function of recording rules in Prometheus?
-- Whas is the alert fatigue?
-- Which feature of Alertmanager is responsible for formatting and customizing the alerts?
-- How can you configure Alertmanager to disable the grouping of alerts for a specific route effectively?
-- Which software is commonly used for visualizing Prometheus metrics?
-- What does the term "inhibiting" refer to in the context of Alertmanager?
-- What is the format used for defining alerting rules?
-- What is the significance of the `for` attribute in a Prometheus alert rule?
-- How can you temporarily mute/snooze an alert during maintenance in Prometheus?
-- What is the name of Prometheus' native dashboarding and visualization feature?
-- How can you coordinate the simultaneous sending of multiple alerts with similar label sets in Prometheus?
-- How can Alertmanager temporarily suppress notifications for specific alerts?
-- Which feature of Alertmanager is resonsilbe for sending alert to the right receiver?
-- What is the purpose of the repeat_interval/conitnue/group_wait/group_inteval attribute in an Alertmanager route configuration?
-- Which 2 attribute(s) of an alerting rule can be used to include extra metadata?
-- What is an exemplar in Prometheus?
-- What are required for a high-availability configuration of Alertmanager?
+1. Is there a way to deactivate a specific route in Alertmanager for a specific time frame?
+2. What is considered a best practice when it comes to alerting in monitoring systems: focusing on alerting based on symptoms or alerting based on causes?
+3. What is the meaning of "alert symptoms" and "alert causes" in the context of monitoring systems?
+4. Which aspect, symptoms or causes, is more visible to customers in the context of an issue?
+5. What is the good naming convention for the recoring rules?
+6. What is Acknowledge-based throttling and Time-based throttling?
+7. What are the 3 possible statuses of a Prometheus alert?
+8. How can I use a PromQL query to retrieve the currently active alerts in Alertmanager?
+9. What is the recording rules in Prometheus?
+10. How to define the recording rules?
+11. Whas is the alert fatigue?
+12. Which feature of Alertmanager is responsible for formatting and customizing the alerts?
+13. How can you configure Alertmanager to disable the grouping of alerts for a specific route effectively?
+14. Which software is commonly used for visualizing Prometheus metrics?
+15. What does the term "inhibiting" refer to in the context of Alertmanager?
+16. What is the format used for defining alerting rules?
+17. What is the significance of the `for` attribute in a Prometheus alert rule?
+18. How can you temporarily mute/snooze/suppress an alert during maintenance in Prometheus?
+19. What is the name of Prometheus native dashboarding and visualization feature?
+20. How can you coordinate the simultaneous sending of multiple alerts with similar label sets in Prometheus?
+21. Which feature of Alertmanager is resonsilbe for sending alert to the right receiver?
+22. What is the purpose of the `repeat_interval/conitnue/group_wait/group_inteval` attribute in an Alertmanager route configuration?
+23. Which 2 attributes of an alerting rule can be used to include extra metadata?
+24. What are required for a high-availability configuration of Alertmanager?
