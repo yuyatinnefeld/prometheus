@@ -26,6 +26,8 @@
 13. How do Prometheus, ELK stack, and InfluxDB differ in terms of their functionalities and use cases?
 14. What is the definition of a metric?
 15. What are the Prometheus exemplars?
+16. What is one of the main purposes or goals of logging?
+
 
 ### Prometheus Fundamentals (20%)
 1. What is the CLI utility tool for Prometheus called?
@@ -54,6 +56,7 @@
 24. What is the agent deployment mode of Prometheus?
 25. Which CLI command is suitable for unit testing Prometheus rules?
 26. Which CLI command is suitable for checking validity of the config files?
+27. How do you define the targets with SD that Prometheus should collect metrics from?
 
 
 ### PromQL (28%)
@@ -75,7 +78,12 @@
 16. What are the 4 components of the Prometheus metrics data model?
 17. What is the difference between the ceil and floor functions?
 18. Which query function among the following returns a result of 1 in case the specified time series does not exist?
-
+19. What is the logical/arithmetic/comparison binary operator?
+20. What is the vector matching?
+21. What is the group modifiers?
+22. Which function is NOT using counter metrics? `irate(), increase(), reset(), idelta(), avg()`
+23. How to calc the time in days until the LAST certificate expiration?
+24. What is the dimensional aggregation?
 
 ### Instrumentation and Exporters (16%)
 1. What is the HTTP headers to establish by Prometheus during each scrape?
@@ -94,7 +102,7 @@
 14. Which endpoints allows blackbox probing?
 15. In a scenario where you have a dynamic etcd database containing scrape targets for Prometheus, how should you configure service discovery?
 16. What are the 2 types of attributes that can be present in the `/metrics` endpoint?
-
+17. Which exporter is the most suitable for monitoring Scala metrics among the following options?
 
 ### Recording & Alerting & Dashboarding (18%)
 1. Is there a way to deactivate a specific route in Alertmanager for a specific time frame?
@@ -103,7 +111,7 @@
 4. Which aspect, symptoms or causes, is more visible to customers in the context of an issue?
 5. What is the good naming convention for the recoring rules?
 6. What is Acknowledge-based throttling and Time-based throttling?
-7. What are the 3 possible statuses of a Prometheus alert?
+7. What are the 3 statuses of a Prometheus alert?
 8. How can I use a PromQL query to retrieve the currently active alerts in Alertmanager?
 9. What is the recording rules in Prometheus?
 10. How to define the recording rules?

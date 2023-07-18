@@ -30,6 +30,7 @@
 13. Prometheus is a pull-based time-series database and monitoring system specifically designed for monitoring dynamic cloud-native environments.
 14. numeric time-series data point
 15. An exemplar is a specific trace representative of measurement taken in a given time interval and provides additional information about a specific data point.
+16. To gather and aggregate textual event data from a service for troubleshooting
 
 ### Prometheus Fundamentals (20%)
 1. promtool
@@ -58,7 +59,7 @@
 24. agent mode is a light promtheus mode, which is focused for remote-write (remote storage), service-discovery and scraping specially for edge-computing/IoT and reducing for querying, alerting and local storage 
 25. `./promtool test rules test.yml`
 26. `./promtool check rules test.yml`
-
+27. `scrape_configs` and `*_sd_configs` on per-job basis
 
 ### PromQL & Metrics (28%)
 1. Query Language for Prometheus
@@ -72,14 +73,19 @@
 9. `rate(...)` needs COUNTER type metrics
 10. `offset` refers to the past time as duration
 11. `rate(...)` calc avg rate of change of a time series over the specified time range, `irate(...)` calc avg rate of change of a time series at the last 2 data points
-12. `deriv(...)` function calculates the instantaneous rate of change at each data point within the range.
+12. `deriv(...)` operates on gauge and `rate(...)` operates on counter
 13. guage
 14. float64.
-15. `_bucket`, `_sum` and `_count`
+15. `<basename>_bucket`, `<basename>_sum` and `<basename>_count`
 16. metric name, metrics label, timestamp, value
 17. `floor(...)` = round a number down, `ceil(...)` = round a number up
 18. `absent(...)`
-
+19. logical => `OR, AND, UNLESS`, arithmetic => `+ - * / % ^`, comparison => `==, !=, >, <, >=, <=`
+20. `on, ignoring`
+21. a part of vector matching. `on, ignoring` + `group_left, group_right`
+22. `idelta()`
+23. `max(cert_expiry - time()) / 86400`
+24. `sum(), min(), max(), avg(), count()`
 
 ### Instrumentation and Exporters (16%)
 1. `X-Prometheus-Scrape-Timeout-Seconds`
@@ -98,7 +104,7 @@
 14. Blackbox Exporter allows blackbox probing of endpoints over `HTTP, HTTPS, DNS, TCP, ICMP, gRPC`
 15. `file_sd_configs`
 16. HELP, TYPE
-
+17. JMX Exporter
 
 ### Recording & Alerting & Dashboarding (18%)
 1. attribute in the route `time_intervals` ex. `time_intervals: [holidays, offhours]`. `mute_time_interval` is DEPRECATED.
@@ -108,7 +114,7 @@
 5. `<<level>>:<<metric>>:<<operations>>`, e.g.`job:node_cpu_seconds:avg_idle`
 6. acknowledge-based = notifications for an alert are sent to the recipient only once until the alert is acknowledged or resolved
 6. time-based = timiting the rate of notifications based on a specific time interval (ex. goup_interval, scrape_interval)
-7. firing, pending, active, inactive
+7. firing, pending, inactive
 8. not possible / ALERTS you can use in the alert rule
 9. aggregate and filter metrics with PromQL and storing them into Prometheus DB
 10. `rules` -> `record: xxx`,`expr: xxx`
