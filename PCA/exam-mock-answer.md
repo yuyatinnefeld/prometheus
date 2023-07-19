@@ -35,7 +35,7 @@
 ### Prometheus Fundamentals (20%)
 1. promtool
 2. scalability for large-scale deployments with millions of TS, Long-term storage, High cardinality, HA and Replication
-3. SD is a mechanism that allow to automatically discover and monitor targets and services. There are 2 categories: top-down and bottom-up mechanisms of static SD
+3. SD is a mechanism that allow to automatically discover and monitor targets and services. There are 2 categories: top-down (e.i. ec2) and bottom-up (e.i. consol) mechanisms of static SD
 4. `scrape_interval`
 5. `scrape_configs`
 6. `scrape_configs` -> `relabel_configs` -> `action: drop`
@@ -51,7 +51,7 @@
 16. Prometheus exporter
 17. Pushgateway
 18. Using `honor_labels` can make your collected metrics more informative and allow you to differentiate between different metrics coming from various sources or probe targets
-19. 9090:prometheus-server, 9093:altermanger, 9100:node-cluster, 9091:pushgateway
+19. 9090:prometheus-server, 9093:altermanger, 9100:node-exporter, 9091:pushgateway, 9115:blackbox-exporter
 20. `instance` and `job`
 21. ext4, XFS, and NTFS
 22. Internet Control Message Protocol (ICMP) -> `prober:icmp`
@@ -60,6 +60,9 @@
 25. `./promtool test rules test.yml`
 26. `./promtool check rules test.yml`
 27. `scrape_configs` and `*_sd_configs` on per-job basis
+28. starting the server with the flag `--web.enable-admin-api` + `curl - X POST -g 'http://localhost:9090/api/v1/admin/tsdb/delete_series?match[]={xxxx="yyy"}'`
+29. starting the server with the flag `--web.enable-admin-api` + `$ curl -X POST -g 'http://localhost:9090/api/v1/admin/tsdb/clean_tombstones'`
+30. YAML and JSON
 
 ### PromQL & Metrics (28%)
 1. Query Language for Prometheus
@@ -105,6 +108,8 @@
 15. `file_sd_configs`
 16. HELP, TYPE
 17. JMX Exporter
+18. `honor_labels:true`
+19. PromQL > `job_last_success_unixtime`
 
 ### Recording & Alerting & Dashboarding (18%)
 1. attribute in the route `time_intervals` ex. `time_intervals: [holidays, offhours]`. `mute_time_interval` is DEPRECATED.
@@ -115,7 +120,7 @@
 6. acknowledge-based = notifications for an alert are sent to the recipient only once until the alert is acknowledged or resolved
 6. time-based = timiting the rate of notifications based on a specific time interval (ex. goup_interval, scrape_interval)
 7. firing, pending, inactive
-8. not possible / ALERTS you can use in the alert rule
+8. Mene > Alerts > Query > `ALERTS`
 9. aggregate and filter metrics with PromQL and storing them into Prometheus DB
 10. `rules` -> `record: xxx`,`expr: xxx`
 11. Alert fatigue refers to a situation where individuals or teams become overwhelmed or desensitized by a large volume of alerts
@@ -135,3 +140,4 @@
 22. `group_interval`: dictates how long to wait before sending notifications about new alerts
 23. `annotations + labels`
 24. This can be configured using the `--cluster-*` flags
+25. Active, Pending, Expired

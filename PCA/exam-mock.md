@@ -46,9 +46,9 @@
 14. What is the purpose of the `scrape_interval` configuration in Prometheus?
 15. Which type of database does Prometheus utilize?
 16. What component is responsible for collecting metrics from an instance and exposing them in a format that Prometheus expects?
-17. Which component is suitable for collecting metrics from batch jobs?
+17. Which component is suitable for collecting metrics from batch/cron jobs?
 18. When is the configuration option `honor_labels:true` used?
-19. What is the purpose of port `9090/9093/9100/9091` in Prometheus?
+19. What is the purpose of port `9090/9093/9100/9091/9115` in Prometheus?
 20. what are 2 default metric labels?
 21. Which of the file systems is recommended/supported by Prometheus?
 22. How can you configure a Blackbox Exporter probe to check the successful response of your servers to PING?
@@ -57,6 +57,9 @@
 25. Which CLI command is suitable for unit testing Prometheus rules?
 26. Which CLI command is suitable for checking validity of the config files?
 27. How do you define the targets with SD that Prometheus should collect metrics from?
+28. How can you delete the specific time series metrics of Prometheus?
+29. How can you delete the all time series metrics of Prometheus?
+30. Which format does file-based SD provide?
 
 
 ### PromQL (28%)
@@ -103,6 +106,8 @@
 15. In a scenario where you have a dynamic etcd database containing scrape targets for Prometheus, how should you configure service discovery?
 16. What are the 2 types of attributes that can be present in the `/metrics` endpoint?
 17. Which exporter is the most suitable for monitoring Scala metrics among the following options?
+18. How to keep pushgateway job labels? normally there are overwritten
+19. How does Prometheus scrape the last batch job push time?
 
 ### Recording & Alerting & Dashboarding (18%)
 1. Is there a way to deactivate a specific route in Alertmanager for a specific time frame?
@@ -129,3 +134,4 @@
 22. What is the purpose of the `repeat_interval/conitnue/group_wait/group_inteval` attribute in an Alertmanager route configuration?
 23. Which 2 attributes of an alerting rule can be used to include extra metadata?
 24. What are required for a high-availability configuration of Alertmanager?
+25. What are the 3 statuses of Alertmanager Silences?
