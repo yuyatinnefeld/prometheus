@@ -87,6 +87,7 @@
 22. Which function is NOT using counter metrics? `irate(), increase(), reset(), idelta(), avg()`
 23. How to calc the time in days until the LAST certificate expiration?
 24. What is the dimensional aggregation?
+25. What is the significance of the double underscore "__" before a label name?
 
 ### Instrumentation and Exporters (16%)
 1. What is the HTTP headers to establish by Prometheus during each scrape?
@@ -108,6 +109,7 @@
 17. Which exporter is the most suitable for monitoring Scala metrics among the following options?
 18. How to keep pushgateway job labels? normally there are overwritten
 19. How does Prometheus scrape the last batch job push time?
+
 
 ### Recording & Alerting & Dashboarding (18%)
 1. Is there a way to deactivate a specific route in Alertmanager for a specific time frame?

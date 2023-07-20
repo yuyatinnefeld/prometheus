@@ -89,6 +89,7 @@
 22. `idelta()`
 23. `max(cert_expiry - time()) / 86400`
 24. `sum(), min(), max(), avg(), count()`
+25. The label is a reserved label
 
 ### Instrumentation and Exporters (16%)
 1. `X-Prometheus-Scrape-Timeout-Seconds`
