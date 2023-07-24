@@ -8,19 +8,17 @@
 - Question: 60
 - Pass: x > 75% (min 45/60)
 
-## Exam Topics
+## 120 Sample Exam Questions
 
 ### Observability Concepts (18%)
 1. pull-based
 2. Observability: understand what's happening inside a system and predict how it will behave in the future
-2. Monitoring: continues observation of a system to detect and alert on abnormal behavior.
-2. Telemetry: automates collection and transmission of data from remote source.
 3. RED Method consists of: (Request) Rate + (Request) Errors + (Request) Duration
 4. SLO: Service Level Objective (Goal), SLA: Service Level Agreement (Contract), SLI: Service Level Indicator (Metrics)
 5. Span is a single operation/unit of work within a distributed system and captures the start and end times, duration, and associated metadata of a specific operation
 6. for monolith system
 7. Operation Name, Trace ID and Span ID, Start and End Timestamps, Duration, Parent Span ID
-8. Logging, Trace and Metrics
+8. bad: a metric with a lot fo variance and poor correlation with user experience, good: metric to set easier threashold for bcs there is no overlap at all.
 9. Metrics (numeric value)
 10. SLI is typically derived from metrics
 11. An error budget policy is a concept used in the context of SLOs and SLAs and is to define the acceptable level of errors or service disruptions that a system or service can experience within a given time period.
@@ -31,6 +29,11 @@
 14. numeric time-series data point
 15. An exemplar is a specific trace representative of measurement taken in a given time interval and provides additional information about a specific data point.
 16. To gather and aggregate textual event data from a service for troubleshooting
+17. Logging, Trace and Metrics
+18. Monitoring: continues observation of a system to detect and alert on abnormal behavior.
+19. Telemetry: automates collection and transmission of data from remote source.
+20. Data silos, Volume, velocity, variety, and complexity of data, Lack of pre-production
+
 
 ### Prometheus Fundamentals (20%)
 1. promtool
@@ -111,6 +114,7 @@
 17. JMX Exporter
 18. `honor_labels:true`
 19. PromQL > `job_last_success_unixtime`
+20. online-serving, offline-processing, and batch jobs
 
 ### Recording & Alerting & Dashboarding (18%)
 1. attribute in the route `time_intervals` ex. `time_intervals: [holidays, offhours]`. `mute_time_interval` is DEPRECATED.

@@ -8,17 +8,17 @@
 - Question: 60
 - Pass: x > 75% (min 45/60)
 
-## Exam Topics
+## 120 Sample Exam Questions
 
 ### Observability Concepts (18%)
 1. What is the preferred approach used by Prometheus to collect metrics from a target?
-2. How do Observability, Monitoring, and Telemetry differ in terms of their functionalities?
+2. What is the Observability?
 3. What is RED Method?
 4. What are the distinctions between SLO, SLI, and SLA?
 5. In the context of tracing, what is the meaning or representation of a span?
 6. In which scenarios is distributed tracing less beneficial or NOT as applicable?
 7. What are typically tracked within a span of a trace?
-8. What are the 3 core components of observability?
+8. What is the good and bad metric?
 9. Which type of data is monitored by Prometheus?
 10. In the context of monitoring and observability, what type of data is typically used to define a SLI?
 11. What is the meaning or purpose of an error budget policy?
@@ -27,7 +27,10 @@
 14. What is the definition of a metric?
 15. What are the Prometheus exemplars?
 16. What is one of the main purposes or goals of logging?
-
+17. What are the 3 core components of observability?
+18. What is the Monitoring
+19. What is the Telemetry?
+20. What is the challenges of observability?
 
 ### Prometheus Fundamentals (20%)
 1. What is the CLI utility tool for Prometheus called?
@@ -84,7 +87,7 @@
 19. What is the logical/arithmetic/comparison binary operator?
 20. What is the vector matching?
 21. What is the group modifiers?
-22. Which function is NOT using counter metrics? `irate(), increase(), reset(), idelta(), avg()`
+22. Which function is NOT using counter metrics? `irate(), increase(), reset(), idelta(), avg(), rate()`
 23. How to calc the time in days until the LAST certificate expiration?
 24. What is the dimensional aggregation?
 25. What is the significance of the double underscore "__" before a label name?
@@ -110,6 +113,7 @@
 17. Which exporter is the most suitable for monitoring Scala metrics among the following options?
 18. How to keep pushgateway job labels? normally there are overwritten
 19. How does Prometheus scrape the last batch job push time?
+20. What is the 3 types of service system?
 
 
 ### Recording & Alerting & Dashboarding (18%)
