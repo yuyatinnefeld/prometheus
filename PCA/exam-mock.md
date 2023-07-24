@@ -65,7 +65,7 @@
 ### PromQL (28%)
 1. What is PromQL?
 2. What is histogram metric in Prometheus?
-3. Which data types are used in PromQL?
+3. Which 4 data types are used in PromQL?
 4. What is the name of the vector in Prometheus that stores a single sample value?
 5. Which PromQL function is used to estimate the value of a time series at a future time, t seconds from the current time, based on the range vector v?
 6. Between what type of expressions can logical operators be defined?
@@ -88,6 +88,7 @@
 23. How to calc the time in days until the LAST certificate expiration?
 24. What is the dimensional aggregation?
 25. What is the significance of the double underscore "__" before a label name?
+
 
 ### Instrumentation and Exporters (16%)
 1. What is the HTTP headers to establish by Prometheus during each scrape?
@@ -117,7 +118,7 @@
 3. What is the meaning of "alert symptoms" and "alert causes" in the context of monitoring systems?
 4. Which aspect, symptoms or causes, is more visible to customers in the context of an issue?
 5. What is the good naming convention for the recoring rules?
-6. What is Acknowledge-based throttling and Time-based throttling?
+6. What is the acknowledge-based throttling and Waht is the time-based throttling?
 7. What are the 3 statuses of a Prometheus alert?
 8. How can I use a PromQL query to retrieve the currently active alerts in Alertmanager?
 9. What is the recording rules in Prometheus?

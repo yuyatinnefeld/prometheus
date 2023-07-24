@@ -38,11 +38,11 @@
 3. SD is a mechanism that allow to automatically discover and monitor targets and services. There are 2 categories: top-down (e.i. ec2) and bottom-up (e.i. consol) mechanisms of static SD
 4. `scrape_interval`
 5. `scrape_configs`
-6. `scrape_configs` -> `relabel_configs` -> `action: drop`
+6. `scrape_configs` -> `relabel_configs` -> `action: drop` or `action: keep`
 7. with the flag `--storage.tsdb.retention.time` and `--storage.tsdb.retention.size`
 8. Retrieval, TSDB, HTTP Server
 9. with the flag `--web.enable-lifecycle`
-10. Sending a SIGHUP signal to the Prometheus process, Using the Prometheus API `/-/reload`, Using a service manager (systemctl) or orchestration tool (k8s)
+10. Sending a SIGHUP signal to the Prometheus process, Using the Prometheus API `POST or PUT + /-/reload`, Using a service manager (systemctl) or orchestration tool (k8s)
 11. HTTP GET method
 12. `ec2_sd_configs`
 13. `ec2_sd_configs`
