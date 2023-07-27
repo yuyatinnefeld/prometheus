@@ -1,41 +1,41 @@
 # Promtheus Getting Started
 
-## Use Prometheus
+## Learn Prometheus Configuration
 ```bash
 cd stepup
 ```
 
-## Add Recording Rules
+## Learn Recording Rules
 ```bash
 cd recording-rules
 ```
 
-## Add Alering Rules
+## Learn Alering Rules
 ```bash
 cd alerting-rules
 ```
 
-## Add Alertmanager
+## Learn Alertmanager
 ```bash
 cd alertmanager
 ```
 
-## Add Blackbox Exporter
+## Learn Blackbox Exporter
 ```bash
 cd blackbox-exporter
 ```
 
-## Use PushGateway
+## Learn PushGateway
 ```bash
 cd pushgateway
 ```
 
-## Service Discovery
+## Learn Service Discovery
 ```bash
 cd service-discovery
 ```
 
-## PromQL
+## Learn PromQL
 ```bash
 cd promql
 ```
